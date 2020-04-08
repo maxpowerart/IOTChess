@@ -1,11 +1,21 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "fuckworld.h"
-
+#include "fuckworld.h" 
 bool Ufuckworld::Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b)
 {
+	
 	uint8 mass[8][8];
+	for (int i = 63; i >= 0; i--)
+	{
+		mass[7 - (i / 8)][i % 8] = Input[i];
+	}
+	UE_LOG(LogTemp, Warning, TEXT("Start array"));
+	for (int i = 0; i < 64; i++)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("[%d][%d] = %c"), i / 8, i % 8, (char)mass[i / 8][i % 8]);
+	}
+	UE_LOG(LogTemp, Warning, TEXT("End array"));
 	if ((char)mass[a][b] == 'K')
 	{
 		int i = 1;   //проверяем ладью/ферзя слева
@@ -206,5 +216,4 @@ bool Ufuckworld::Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b)
 		}
 		return false;
 	}
-	return false;
 }
