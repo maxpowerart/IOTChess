@@ -14,5 +14,5 @@ class IOTCHESS_API Ufuckworld : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 		UFUNCTION(BlueprintCallable, Category = "FuckFuck")
-		static bool Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b);
+		static bool Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b, bool white);
 };
