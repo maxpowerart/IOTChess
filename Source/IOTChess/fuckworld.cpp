@@ -2,7 +2,7 @@
 
 
 #include "fuckworld.h" 
-bool Ufuckworld::Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b)
+bool Ufuckworld::Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b, bool white)
 {
 	
 	uint8 mass[8][8];
@@ -16,7 +16,7 @@ bool Ufuckworld::Shah(UPARAM(ref) TArray<uint8>& Input, int a, int b)
 		UE_LOG(LogTemp, Warning, TEXT("[%d][%d] = %c"), i / 8, i % 8, (char)mass[i / 8][i % 8]);
 	}
 	UE_LOG(LogTemp, Warning, TEXT("End array"));
-	if ((char)mass[a][b] == 'K')
+	if (white)
 	{
 		int i = 1;   //проверяем ладью/ферзя слева
 		while ((char)mass[a][b - i] == '.' && b - i > 0)
